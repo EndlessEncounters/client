@@ -16,19 +16,26 @@ const EventService={
       });
   },
   postEvent(ev) {
-    return fetch(`${config.API_ENDPOINT}/event`, {
-      method: 'POST',
-      headers: {
-        Authorization: `bearer ${TokenService.getAuthToken()}`,
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify(ev)
+    let p1=new Promise((resolve, reject) => {
+      const duration=Math.floor(Math.random()*5000);
+      setTimeout(() => {
+        resolve(`${ev} sent!`)
+      }, duration)
     })
-      .then(res => {
-        return (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          :res.json();
-      });
+    return p1;
+    // return fetch(`${config.API_ENDPOINT}/choice`, {
+    //   method: 'POST',
+    //   headers: {
+    //     Authorization: `bearer ${TokenService.getAuthToken()}`,
+    //     'content-type': 'application/json'
+    //   },
+    //   body: JSON.stringify(ev)
+    // })
+    //   .then(res => {
+    //     return (!res.ok)
+    //       ? res.json().then(e => Promise.reject(e))
+    //       :res.json();
+    //   });
   }
 
 }

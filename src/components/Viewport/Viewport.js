@@ -12,22 +12,18 @@ export default class Viewport extends React.Component {
     super(props);
   }
 
-  static contextType = EventContext;
-
-  renderTavern() {
-    return <Tavern/>
-  }
+  static contextType=EventContext;
 
   //Place holder for Level up event
   //Render this to viewport on level ups if there is no time
   renderLevelUp() {
     return <LevelUp
       points={this.props.character.statPoints}
-      stats={this.props.character.stats}/>
+      stats={this.props.character.stats} />
   }
 
   renderExplore() {
-    return <Explore displayText={this.props.displayText}/>
+    return <Explore displayText={this.props.displayText} />
   }
 
   renderCombat=() => {
@@ -45,18 +41,16 @@ export default class Viewport extends React.Component {
     return <Combat opponents={dummyOpp} />
   }
 
-  componentDidMount = () => {
+  componentDidMount=() => {
 
   }
 
   render() {
-    
+
     return (
       <div className='viewport border'>
-        {this.props.view==='tavern'&&this.renderTavern()}
-        {this.props.view==='town'&&this.renderExplore()}
         {this.props.view==='levelUp'&&this.renderLevelUp()}
-        {this.props.view===true&&this.renderCombat()}
+        {this.props.view!=='levelUp'&&this.renderExplore()}
       </div>
     )
   }

@@ -7,9 +7,6 @@ import UserContext from '../../contexts/UserContext';
 
 export default class Home extends React.Component {
   static contextType=UserContext;
-  getCharacter=() => {
-
-  }
   render() {
     return (
       <HomeMain />

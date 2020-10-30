@@ -1,4 +1,5 @@
 import React from 'react';
+import EventContext from '../../contexts/EventContext';
 import './LevelUp.css';
 
 export default class LevelUp extends React.Component {
@@ -21,11 +22,12 @@ export default class LevelUp extends React.Component {
     },
     points: 1
   }
+  static contextType=EventContext;
 
   handleStatIncrease(key, value) {
     //Send stat post to back end here
 
-    
+
     const newStats=this.state.stats;
     newStats[key]++;
     this.setState({

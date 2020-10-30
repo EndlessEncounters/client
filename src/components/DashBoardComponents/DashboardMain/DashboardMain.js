@@ -39,21 +39,22 @@ export default class Dashboard extends React.Component {
   handleExploreOption=(e) => {
     e.preventDefault();
     //Should send 'choice' to backend here and receive story
-
-    //Response from backend
-    this.context.setStory(storyDummy);
-    if(e.target.value!==this.state.view) {
-      this.setState({
-        view: e.target.value,
-        displayText: [<p>{this.context.story.displayText}</p>],
-        combat: this.context.story.combat
-      });
-    } else {
-      this.setState({
-        displayText: [...this.state.displayText, <p>{this.context.story.displayText}</p>],
-        combat: this.context.story.combat
+    const value=e.target.value;
+    this.context.sendChoice(value)
+      .then(res => {
+        if(value!==this.state.view) {
+          this.setState({
+            view: value,
+            displayText: [<p>{this.context.story.displayText}</p>],
+            combat: this.context.story.combat
+          });
+        } else {
+          this.setState({
+            displayText: [...this.state.displayText, <p>{this.context.story.displayText}</p>],
+            combat: this.context.story.combat
+          });
+        }
       })
-    }
   }
 
   handleDisplayChange=(ev) => {

@@ -1,11 +1,16 @@
 .abl-outer{
     margin: 10px 40px;
     width: auto;
+    min-height: 240px;
     max-height: 300px;
     border: .2em solid black;
     text-align: center;
     overflow-y: scroll;
     border-radius: 1.8%;
+}
+
+.abl-button {
+    margin: 10px auto;
 }
 
 @media only screen and (max-width: 600px) {
