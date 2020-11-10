@@ -4,7 +4,8 @@ import SimplifiedViewPort from '../Viewport/SimplifiedViewport.js';
 import eventService from '../../services/event-service';
 import EventContext from '../../contexts/EventContext';
 import SwitchTabSound from '../SoundWidgets/SwitchTabSound';
-// import {Transition, animated} from 'react-spring/renderprops';
+import {Transition, animated} from 'react-spring/renderprops';
+
 
 import './Dash.css';
 
@@ -54,11 +55,11 @@ export default class Dashboard extends React.Component {
 
   renderExploreOptions() {
     if(this.context.story.choices) {
-      return this.context.story.choices.map((choice, index) => {
+      for(const choice in this.context.story.choices) {
         return (
-          <button key={index} value={choice.name} onClick={(e) => this.handleExploreOption(e)}>{choice.displayName}</button>
+          <button key={choice} value={choice.name} onClick={(e) => this.handleExploreOption(e)}>{choice.displayName}</button>
         )
-      })
+      }
     }
   }
 
@@ -70,7 +71,8 @@ export default class Dashboard extends React.Component {
   }
 
   componentDidMount=async () => {
-    this.context.setStory(await eventService.getUserStory())
+
+    this.context.setStory(await eventService.getUserStory(window.localStorage.getItem('userInfo')))
     this.setState({displayText: [...this.state.displayText, <p>{this.context.story.displayText}</p>]})
   }
 
@@ -78,6 +80,7 @@ export default class Dashboard extends React.Component {
     return (
       <main className='dash-main'>
         <SimplifiedViewPort displayText={this.context.story.displayText} />
+        <p>{this.context.choices}</p>
         <form id='choice_form' onSubmit={async (e) => {
           e.preventDefault();
           const input=e.target.choice;
@@ -89,10 +92,10 @@ export default class Dashboard extends React.Component {
           <button type='submit'>Make Choice</button>
         </form>
 
-        {/* <div className='nav-btns'>
+        <div className='nav-btns'>
           {!this.state.combat&&this.renderExploreOptions()}
           {this.renderTabButtons()}
-        </div> */}
+        </div>
         <div className='char-assets'>
           <div>
 

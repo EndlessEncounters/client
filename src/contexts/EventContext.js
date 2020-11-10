@@ -11,7 +11,8 @@ const EventContext=React.createContext({
   clearError: () => { },
   setStory: () => { },
   setEntity: () => { },
-  sendChoice: () => { }
+  sendChoice: () => { },
+
 });
 
 export default EventContext;
@@ -38,6 +39,8 @@ export class EventProvider extends React.Component {
 
   setStory=(story) => {
     this.setState({story});
+
+
   }
 
   setEntity=(entity) => {
@@ -61,7 +64,8 @@ export class EventProvider extends React.Component {
       setStory: this.setStory,
       clearError: this.clearError,
       setEvent: this.setEvent,
-      sendChoice: this.sendChoice
+      sendChoice: this.sendChoice,
+
     }
     return (
       <EventContext.Provider value={value}>
