@@ -13,7 +13,11 @@ Endless Encounters is a text-based RPG ("Role Playing Game") developed by Emotio
 ## How To Use:
 
 #### Home
- ![home](/screenshots/home.jpg)
+ ![home](/screenshots/home.JPG)
+
+#### About
+ Learn more about the game by visiting the about page.  
+ ![about](/screenshots/about.JPG)
 
 #### Register
  Set up an account.
@@ -22,7 +26,7 @@ Endless Encounters is a text-based RPG ("Role Playing Game") developed by Emotio
   Password: password8!
   Email: Jane@gmail.com
  ```
- ![register](/screenshots/reg.jpg)
+ ![register](/screenshots/reg.JPG)
 
 #### Log In
   A Demo Account has been set up for ease of access.
@@ -30,15 +34,11 @@ Endless Encounters is a text-based RPG ("Role Playing Game") developed by Emotio
     Username: admin
     Password:password
   ```
-  ![login](/screenshots/login.jpg)
+  ![login](/screenshots/login.JPG)
 
 #### Dashboard
- You will be brought to your dashboard. Where you will be prompted to enter your character's name, and pick a class. You will be presented with choices to make. Explore or attack to your hearts content.
-  ![dash](/screenshots/dash.jpg)
-
-#### About
- Learn more about the game by visiting the about page.
- ![about](/screenshots/about.jpg)
+ You will be brought to your dashboard. Where you will be prompted to enter your character's name, and pick a class. You will be presented with choices to make. Explore or attack to your hearts content.  
+  ![dash](/screenshots/dash.JPG)
 
 ## Technologies Used:  
 FrontEnd: JavaScript, React, CSS 3, HTML 5, and Jest.  
