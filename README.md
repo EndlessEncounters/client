@@ -2,8 +2,8 @@
 [Endless Encounters](https://endless-encounters-chi.vercel.app/ "Endless Encounters") ||
 [Client GitHub](https://github.com/EndlessEncounters/client "Client GitHub") ||
 [API GitHub](https://github.com/EndlessEncounters/server "API Github")
-[Alexis Felts](https://github.com/Nvlt "Alexis Felts"),  
-By: [John Pendergast](https://github.com/Jpending "John Pendergast"),
+By: [Alexis Felts](https://github.com/Nvlt "Alexis Felts"),  
+[John Pendergast](https://github.com/Jpending "John Pendergast"),  
 [Scott Whiteman](https://github.com/scottWhiteman "Scott Whiteman"), &
 [Tiffany Summerford](https://github.com/breakfastatiffs "Tiffany Summerford")  
 
