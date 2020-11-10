@@ -19,7 +19,9 @@ export default function Accordion(props) {
                  </button>
              </div>
              <div ref={content} style={{ maxHeight: `${setHeight}` }} className='acc-inner'>
-                {props.content}
+                <p className='acc-content'>
+                    {props.content}
+                </p>
              </div>
         </div>
     )

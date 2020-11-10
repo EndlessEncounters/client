@@ -1,27 +1,8 @@
-.scroll-box{
-    display: flex;
-    flex-direction: column;
-    border: .2em solid black;
-    text-align: left;
-    padding: 1rem;
-    margin:auto;
-    max-height: 40vh;
-    overflow-y: auto;
-    border-radius: 8px;
-}
-
-.nav-btns{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 20px;
-    justify-content: center;
-}
 
 .dash-main {
     padding: 0.5rem;
     max-width: 800px;
     min-width: 300px;
-   
     margin: auto;
     overflow-y: auto;
 }
@@ -39,47 +20,18 @@
 {
    height: 40px;
    margin: 2px;
-
 }
-.char-assets{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.trans-container {
-    position: relative;
-    margin: auto;
-    width: auto;
-    min-width: 300px;
-    flex: 2;
-    
-}
-
-.trans-container > div {
-    will-change: transform, opacity;
-  }
 
 @media all and (min-width: 600px){
-    .scrollBox {
-        margin: 1rem;
+    #choice_form{
+        align-items: center;
+        justify-content: center;
+        max-width: 550px;
+        margin-left: auto;
+        margin-right: auto;
     }
-
-    .char-assets {
-        display: flex;
-        flex-direction: row;
-        margin: 10px 20px;
-    }
-
-    .trans-container {
-        width: auto;
-        margin: auto;
-        min-width: initial;
-        max-width: 500px;
-    }
-
-    .trans-container > div {
-        margin: 10px 40px;
-        margin-right: 0;
+    
+    #choice_form button{
+        margin: 5px;
     }
 }

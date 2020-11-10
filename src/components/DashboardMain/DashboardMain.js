@@ -3,8 +3,6 @@ import React from 'react';
 import SimplifiedViewPort from '../Viewport/SimplifiedViewport.js';
 import eventService from '../../services/event-service';
 import EventContext from '../../contexts/EventContext';
-import SwitchTabSound from '../SoundWidgets/SwitchTabSound';
-// import {Transition, animated} from 'react-spring/renderprops';
 
 import './Dash.css';
 
@@ -27,26 +25,6 @@ export default class Dashboard extends React.Component {
   }
   static contextType=EventContext;
 
-  // handleExploreOption=(e) => {
-  //   e.preventDefault();
-  //   //Should send 'choice' to backend here and receive story
-
-  //   //Response from backend
-  //   this.context.setStory(storyDummy);
-  //   if(e.target.value!==this.state.view) {
-  //     this.setState({
-  //       view: e.target.value,
-  //       displayText: [<p>{this.context.story.displayText}</p>],
-  //       combat: this.context.story.combat
-  //     });
-  //   } else {
-  //     this.setState({
-  //       displayText: [...this.state.displayText, <p>{this.context.story.displayText}</p>],
-  //       combat: this.context.story.combat
-  //     })
-  //   }
-  // }
-
   handleDisplayChange=(ev) => {
     ev.preventDefault();
     this.setState({display: ev.target.value});
@@ -60,13 +38,6 @@ export default class Dashboard extends React.Component {
         )
       })
     }
-  }
-
-  renderTabButtons() {
-    const tabs=[
-      {name: 'Abilities', tabName: 'abilities', func: this.handleDisplayChange}
-    ]
-    return tabs.map((tab, index) => <SwitchTabSound props={tab} key={index} />)
   }
 
   componentDidMount=async() => {
@@ -89,39 +60,10 @@ export default class Dashboard extends React.Component {
           <button type='submit'>Make Choice</button>
         </form>
 
-        {/* <div className='nav-btns'>
-          {!this.state.combat&&this.renderExploreOptions()}
-          {this.renderTabButtons()}
-        </div> */}
         <div className='char-assets'>
           <div>
 
           </div>
-          {/* <CharStatCard
-
-            stats={this.props.character['stats']}
-            pools={{
-              name: this.props.character.name,
-              hp: this.props.character['hp'],
-              hpMax: this.props.character['max_hp'],
-              mp: this.props.character['mp'],
-              mpMax: this.props.character['max_mp'],
-              ap: this.context.story['ap'],
-              apMax: 10
-            }} /> */}
-            {/* <div className='trans-container'>
-            <Transition
-              reset
-              unique
-              items={this.state.display}
-              from={{position: 'absolute', opacity: 0, transform: `perspective(2000px) translate3d(0%, 0, 0) rotateY(${0}deg)`}}
-              enter={{position: 'initial', opacity: 1, transform: `perspective(2000px) translate3d(0%, 0, 0) rotateY(${0}deg)`}}
-              leave={{top: 0, left: 0, bottom: 0, right: 0, position: 'absolute', opacity: 0, transform: `perspective(800px) translate3d(-50%, 0, 0) rotateY(${-90}deg)`}}
-            >
-              {display => this.tabs[display]}
-            </Transition>
-          </div> */}
-          
         </div>
 
       </main>

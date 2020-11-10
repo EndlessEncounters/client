@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 import UserContext from '../../contexts/UserContext';
 import TokenService from '../../services/token-service';
 import './Header.css'
-import SoundPlayCheck from '../SoundWidgets/SoundPlayCheck';
 
 export default class Header extends Component {
   static contextType=UserContext;
@@ -38,11 +37,6 @@ export default class Header extends Component {
         <div id='themeToggle'>
           {this.props.toggler}
         </div>
-        
-        <div id='soundToggle'>  
-          <SoundPlayCheck />
-        </div>
-
 
         <div >
           <Link className='headerLink' to='/'>Home</Link>

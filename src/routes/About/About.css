@@ -4,7 +4,6 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    
     margin: auto;
 }
 
@@ -21,14 +20,12 @@
     text-align: center;
     font-size: 3.5em;
     font-family: 'nerdland';
-    margin-top: 75px;
 }
 
 .sub-title{
     font-family: 'Nelship';
     font-size: 1.2em;
-    margin: 0 15px;
-    margin-bottom: 10px
+    margin: 10px auto;
 }
 
 .question{
@@ -41,12 +38,14 @@ ul, li{
     margin: 0px;
    
 }
+
 p
 {
     max-width: 275px;
     margin:auto;
     text-align: left;
 }
+
 ul{
     list-style: none;
 }

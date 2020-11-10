@@ -4,36 +4,29 @@
     justify-content: space-around;
     border-width: 1px;
     border-radius: 5px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
+    background-color: #eeeeee;
+    top: 0;
+    width: 100%;
     font-weight: bold;
     padding: 5px;
+    position: fixed;
 }
 
-.headerLink {
+.headerLink, a {
     text-decoration: none;
-}
-
-.headerLink:visited {
     color: #48A9A6;
 }
 
-.headerLink:hover {
+.headerLink:visited, a:visited {
+    color: #48A9A6;
+}
+
+.headerLink:hover, a:hover {
     color: #FEC369;
 }
-#themeToggle
-{
+
+#themeToggle{
     position: fixed;
     bottom: 20px;
     right: 10px;
-    
 }
-/* #soundToggle
-{
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    opacity: 50%;
-    
-} */

@@ -2,8 +2,7 @@ export const lightTheme = {
   body: 'snow',
   text: 'black',
   toggleBorder: '#000',
-  background: 'timber',
-  viewport: '#FFFCBE'
+  background: 'timber'
 }
 export const darkTheme = {
   body: '#111013',

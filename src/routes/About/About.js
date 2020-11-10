@@ -127,7 +127,7 @@ export default function About() {
 
   return (
     <main className = 'abt-outer'>
-      <h1 className='title text-pop-up-bottom'>Endless Encounters</h1>
+      <h1 className='title'>Endless Encounters</h1>
       <div className='abt-inner'>
         <h3 className='sub-title'>A place for those seeking a way to leave their world behind...</h3>
         <img src={mntn} alt='digital drawing of a mountain range in a circle frame' className='mntn' />

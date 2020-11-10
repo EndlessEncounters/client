@@ -5,14 +5,6 @@ import AuthApiService from '../../services/auth-api-service';
 import './LoginForm.css'
 import firebase from "firebase/app";
 import "firebase/auth"
-// import firebaseConfig from '../../firebaseConfig';
-// import {
-//   FirebaseAuthProvider,
-//   FirebaseAuthConsumer,
-//   IfFirebaseAuthed,
-//   IfFirebaseAuthedAnd
-// } from "@react-firebase/auth";
-// import TokenService from '../../services/token-service';
 export default class Login extends React.Component {
   static contextType=UserContext;
   state={error: null};

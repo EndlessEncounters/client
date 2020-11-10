@@ -7,9 +7,10 @@ import './HomeMain.css';
 export default function Home() {
   return (
     <main>
-      <h1 className='header text-pop-up-bottom'>Endless Encounters</h1>
+      <div></div>
+      <h1 className='title'>Endless Encounters</h1>
       <div className='main-inner'>
-        <h3 className='sub-head'>A place for those seeking a way to leave their world behind...</h3>
+        <h3 className='sub-title'>A place for those seeking a way to leave their world behind...</h3>
         <img src={mntn} alt='digital drawing of a mountain range in a circle frame' className='mntn' />
         <nav className='main-nav'>
           <Link className='main-link' to='/main'>Start</Link>
