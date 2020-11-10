@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    max-width: 1000px;
+    
     margin: auto;
 }
 
@@ -39,8 +39,14 @@
 ul, li{
     padding-left: 0px;
     margin: 0px;
+   
 }
-
+p
+{
+    max-width: 275px;
+    margin:auto;
+    text-align: left;
+}
 ul{
     list-style: none;
 }

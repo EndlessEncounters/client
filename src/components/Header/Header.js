@@ -35,11 +35,11 @@ export default class Header extends Component {
           ? this.context.user.username
           : null }
         </div>
-        <div>
+        <div id='themeToggle'>
           {this.props.toggler}
         </div>
         
-        <div>  
+        <div id='soundToggle'>  
           <SoundPlayCheck />
         </div>
 

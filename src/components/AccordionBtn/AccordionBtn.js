@@ -15,13 +15,11 @@ export default function Accordion(props) {
         <div className='acc'>
              <div className='acc-outer'>
                  <button className={`acc-btn acc-header ${setActive}`} onClick={toggleAccordion}>
-                     <p>{props.header}</p>
+                    {props.header}
                  </button>
              </div>
              <div ref={content} style={{ maxHeight: `${setHeight}` }} className='acc-inner'>
-                 <p className='acc-content'>
-                     {props.content}
-                 </p>
+                {props.content}
              </div>
         </div>
     )

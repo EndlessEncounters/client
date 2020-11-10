@@ -22,3 +22,18 @@
 .headerLink:hover {
     color: #FEC369;
 }
+#themeToggle
+{
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    
+}
+/* #soundToggle
+{
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    opacity: 50%;
+    
+} */

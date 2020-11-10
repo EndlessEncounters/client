@@ -17,11 +17,11 @@ export default function About() {
         </h3>
       ),
       content: (
-        <div>
+        <>
           <ReactTooltip id='rpg' place='top' effect='solid' getContent={(dataTip) => `${dataTip}`} />
-        Endless Encounters is a text-based {<div className='dataTip' data-event='click' clickable='true' data-tip='Role Playing Game'
-            data-for='rpg'>RPG</div>} developed by EE; John Pendergast, Alexis Felts, Scott Whiteman, and Tiffany Summerford. Once you're in, you can explore in search of ravenous enemies to duel swords with or visit the tavern to discuss rumors.
-        </div>
+          <p>Endless Encounters is a text-based {<div className='dataTip' data-event='click' clickable='true' data-tip='Role Playing Game'
+            data-for='rpg'>RPG</div>} developed by EE;</p><br/> <p>John Pendergast, Alexis Felts, Scott Whiteman, and Tiffany Summerford.</p><br/> <p>Once you're in, you can explore in search of ravenous enemies to duel swords with or visit the tavern to discuss rumors.</p>
+        </>
       )
     },
     {
@@ -31,7 +31,7 @@ export default function About() {
         </h3>
       ),
       content: (
-        <div>
+        <>
           <ReactTooltip id='special-characters' place='top' effect='solid' getContent={(dataTip) => `${dataTip}`} />
           <ReactTooltip id='uppercaseNum' place='top' effect='solid' getContent={(dataTip) => `${dataTip}`} />
           <p>Creating an account is simple:</p>
@@ -56,7 +56,7 @@ export default function About() {
             <li>Click verification link in the Email</li>
             <li>Navigate back to Endless Encounters, log in, and have fun!</li>
           </ol>
-        </div>
+        </>
       )
     },
     {
@@ -66,7 +66,7 @@ export default function About() {
         </h3>
       ),
       content: (
-        <div>
+        <>
           <p>Upon completing your registration, and logging in you'll be pushed to the user dashboard where you'll be prompted to create your first character. </p>
           <ol>
             <li>Give your character a name (all Alpha-Numeric Characters are valid).</li>
@@ -74,7 +74,7 @@ export default function About() {
             <li>You may choose from several abilities when you first begin your journey. </li>
             <li>Clicking on the 'Finalize Character Button' will create your character and you may only have one active character (per-account) at a time.</li>
           </ol>
-        </div>
+        </>
       )
     },
     {
@@ -84,7 +84,7 @@ export default function About() {
         </h3>
       ),
       content: (
-        <div>
+        <>
           <p>After creating your character, you'll immediately be enveloped with Endless Encounters.</p>
           <ul>
             <li>On the dash, you'll be presented with some action choices in the middle-left portion of your dashboard (the 'explore' and 'tavern' buttons).</li>
@@ -92,7 +92,7 @@ export default function About() {
             <li>Clicking on actions could push you into duels or happen you upon a treasure, and whatever consequences occur from that are now tied to your character!</li>
             <li>Be careful, make good choices, or don't, I'm merely an RPG, not a cop.</li>
           </ul>
-        </div>
+        </>
       )
     },
     {
@@ -102,11 +102,11 @@ export default function About() {
         </h3>
       ),
       content: (
-        <div>
+        <>
           <ReactTooltip id='Combat' place='top' effect='solid' getContent={(dataTip) => `${dataTip}`} />
           <p>Combat is turn-based; on your turn, you may click on one of your character's abilities or spells' to perform against your target. Your character will then attempt the action, with the chance to miss, hit, or completely obliterate their enemy. Each hit to your opponent will result in damage to their health. Abilities and Spells have cost, so make sure you have enough (health, mana, and ability) to perform this action. Keep a heads up for
             {<div className='dataTip' data-event='click' clickable='true' data-tip='Critical misses happen if your character rolls 1, critical hits on a roll of 20.' data-for='Combat'> Critical </div>} misses or hits. </p>
-        </div>
+        </>
       )
     }
   ]
@@ -126,7 +126,7 @@ export default function About() {
   }
 
   return (
-    <body className='abt-outer'>
+    <main className = 'abt-outer'>
       <h1 className='title text-pop-up-bottom'>Endless Encounters</h1>
       <div className='abt-inner'>
         <h3 className='sub-title'>A place for those seeking a way to leave their world behind...</h3>
@@ -135,6 +135,6 @@ export default function About() {
           {aboutLoop()}
         </section>
       </div>
-    </body>
+    </main>
   )
 }

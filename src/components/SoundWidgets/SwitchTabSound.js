@@ -1,6 +1,6 @@
 import useSound from 'use-sound';
 import React from 'react';
-import '../DashBoardComponents/DashboardMain/Dash.css'
+import '../DashboardMain/Dash.css'
 export default function SwitchTabButton(props) {
   const switches=require('../../assets/sounds/music/switches.wav');
   const [play]=useSound(switches)

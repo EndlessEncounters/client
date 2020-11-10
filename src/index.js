@@ -5,27 +5,19 @@ import './index.css';
 import {BrowserRouter} from 'react-router-dom';
 import App from './components/App/App';
 import {UserProvider} from './contexts/UserContext';
-import {CharacterProvider} from './contexts/CharacterContext';
 import {EventProvider} from './contexts/EventContext';
 import firebase from "firebase/app";
 import "firebase/auth"
 import firebaseConfig from './firebaseConfig';
-import {
-  FirebaseAuthProvider,
+import {FirebaseAuthProvider} from "@react-firebase/auth";
 
-  FirebaseAuthConsumer,
-  IfFirebaseAuthed,
-  IfFirebaseAuthedAnd
-} from "@react-firebase/auth";
 ReactDOM.render(
   <FirebaseAuthProvider {...firebaseConfig} firebase={firebase}>
     <BrowserRouter>
       <UserProvider>
-        <CharacterProvider>
-          <EventProvider>
-            <App />
-          </EventProvider>
-        </CharacterProvider>
+        <EventProvider>
+          <App />
+        </EventProvider>
       </UserProvider>
     </BrowserRouter>
   </FirebaseAuthProvider>,

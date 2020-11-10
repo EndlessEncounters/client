@@ -1,17 +1,15 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import Home from '../../routes/Home/Home';
+import HomeMain from '../HomeMain/HomeMain';
 import Header from '../Header/Header';
-import Register from '../../routes/Register/Register';
-import Login from '../../routes/Login/Login';
-import Dashboard from '../../routes/Dashboard/Dashboard';
+import Register from '../RegistrationForm/RegistrationForm';
+import LoginForm from '../LoginForm/LoginForm';
+import DashboardMain from '../DashboardMain/DashboardMain';
 import {Route, Switch, useLocation} from 'react-router-dom';
 import PrivateRoute from '../../routes/routehelpers/PrivateRoute/PrivateRoute';
 import PublicRoute from '../../routes/routehelpers/PublicRoute/PublicRoute';
 import {useTransition, animated} from 'react-spring'
 import About from '../../routes/About/About';
-import LevelUp from '../LevelUp/LevelUp';
-import CreateCharacter from '../CreateCharacter/CreateCharacter';
 
 import {ThemeProvider} from 'styled-components';
 import {GlobalStyles} from '../Styles/GlobalStyles';
@@ -47,17 +45,17 @@ function App() {
             component={Register} />
           <PublicRoute
             path='/login'
-            component={Login} />
+            component={LoginForm} />
           <Route
             exact path='/about'
             component={About} />
           <PrivateRoute
             path='/main'
-            component={Dashboard} />
+            component={DashboardMain} />
           <Route
             exact
             path='/'
-            component={Home} />
+            component={HomeMain} />
         </Switch>
       </animated.div>
     </ThemeProvider>

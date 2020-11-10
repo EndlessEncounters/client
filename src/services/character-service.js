@@ -3,8 +3,8 @@ import config from '../config';
 import TokenService from './token-service';
 
 const CharacterService={
-  getUserCharacter() {
-    return fetch(`${config.API_ENDPOINT}/user/entity/${TokenService.getAccessToken()}`, {
+  async getUserCharacter() {
+    return fetch(`${config.API_ENDPOINT}/user/story/`, {
       headers: {
         'authorization': `bearer ${TokenService.getAuthToken()}`
       }

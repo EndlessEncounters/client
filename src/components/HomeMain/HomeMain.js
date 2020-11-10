@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import mntn from '../../assets/images/mountains.png'
 import './HomeMain.css';
-//import UserContext from '../../contexts/UserContext';
+
 
 export default function Home() {
   return (

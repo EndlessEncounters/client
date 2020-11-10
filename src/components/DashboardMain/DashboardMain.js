@@ -1,19 +1,14 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import Viewport from '../../Viewport/Viewport';
-import CharStatCard from '../CharacterStatCard/CharacterStatCard';
-import Abilities from '../Abilities/Abilities';
-import EventContext from '../../../contexts/EventContext';
-import SwitchTabSound from '../../SoundWidgets/SwitchTabSound';
-import {Transition, animated} from 'react-spring/renderprops';
+import SimplifiedViewPort from '../Viewport/SimplifiedViewport.js';
+import eventService from '../../services/event-service';
+import EventContext from '../../contexts/EventContext';
+import SwitchTabSound from '../SoundWidgets/SwitchTabSound';
+// import {Transition, animated} from 'react-spring/renderprops';
 
-import storyDummy from '../../../storyDummy';
 import './Dash.css';
 
 //Using display state
-const tabs={
-  abilities: style => (<animated.div style={{...style}}><Abilities /></animated.div>),
-}
 
 export default class Dashboard extends React.Component {
   static defaultProps={
@@ -32,6 +27,7 @@ export default class Dashboard extends React.Component {
   }
   static contextType=EventContext;
 
+<<<<<<< HEAD:src/components/DashBoardComponents/DashboardMain/DashboardMain.js
   tabs={
     abilities: style => (<animated.div style={{...style}}><Abilities abilities={this.props.character.abilities} /></animated.div>),
   }
@@ -56,6 +52,27 @@ export default class Dashboard extends React.Component {
         }
       })
   }
+=======
+  // handleExploreOption=(e) => {
+  //   e.preventDefault();
+  //   //Should send 'choice' to backend here and receive story
+
+  //   //Response from backend
+  //   this.context.setStory(storyDummy);
+  //   if(e.target.value!==this.state.view) {
+  //     this.setState({
+  //       view: e.target.value,
+  //       displayText: [<p>{this.context.story.displayText}</p>],
+  //       combat: this.context.story.combat
+  //     });
+  //   } else {
+  //     this.setState({
+  //       displayText: [...this.state.displayText, <p>{this.context.story.displayText}</p>],
+  //       combat: this.context.story.combat
+  //     })
+  //   }
+  // }
+>>>>>>> 9b4dc72520b71ec86a4797a81d7b04f0a6e21210:src/components/DashboardMain/DashboardMain.js
 
   handleDisplayChange=(ev) => {
     ev.preventDefault();
@@ -79,30 +96,35 @@ export default class Dashboard extends React.Component {
     return tabs.map((tab, index) => <SwitchTabSound props={tab} key={index} />)
   }
 
-  componentDidMount=() => {
-    this.context.setStory(storyDummy)
+  componentDidMount=async() => {
+    this.context.setStory(await eventService.getUserStory())
     this.setState({displayText: [...this.state.displayText, <p>{this.context.story.displayText}</p>]})
   }
 
-  render() {
-    console.log(this.props.character)
+  render(){
     return (
       <main className='dash-main'>
-        <Viewport
-          // Combat view
-          view={this.state.combat? this.state.combat
-            // Level Up view
-            :this.props.character.statPoints? 'levelUp'
-              // Non combat view
-              :this.state.view}
-          displayText={this.state.displayText}
-          character={this.props.character} />
-        <div className='nav-btns'>
+        <SimplifiedViewPort displayText={this.context.story.displayText}/>
+        <form id='choice_form' onSubmit={async(e)=>{
+          e.preventDefault();
+          const input = e.target.choice;
+          const inputText = input.value;
+          input.value = '';
+          this.context.setStory(await eventService.makeChoice(inputText));
+        }}>
+          <input name='choice' type='text'/>
+          <button type='submit'>Make Choice</button>
+        </form>
+
+        {/* <div className='nav-btns'>
           {!this.state.combat&&this.renderExploreOptions()}
           {this.renderTabButtons()}
-        </div>
+        </div> */}
         <div className='char-assets'>
-          <CharStatCard
+          <div>
+
+          </div>
+          {/* <CharStatCard
 
             stats={this.props.character['stats']}
             pools={{
@@ -113,8 +135,8 @@ export default class Dashboard extends React.Component {
               mpMax: this.props.character['max_mp'],
               ap: this.context.story['ap'],
               apMax: 10
-            }} />
-          <div className='trans-container'>
+            }} /> */}
+            {/* <div className='trans-container'>
             <Transition
               reset
               unique
@@ -125,7 +147,8 @@ export default class Dashboard extends React.Component {
             >
               {display => this.tabs[display]}
             </Transition>
-          </div>
+          </div> */}
+          
         </div>
 
       </main>
