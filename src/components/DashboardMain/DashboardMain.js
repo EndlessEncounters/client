@@ -73,7 +73,8 @@ export default class Dashboard extends React.Component {
   componentDidMount=async () => {
 
     this.context.setStory(await eventService.getUserStory(window.localStorage.getItem('userInfo')))
-    this.setState({displayText: [...this.state.displayText, <p>{this.context.story.displayText}</p>]})
+    this.setState({displayText: [...this.state.displayText, <p>{this.context.story.displayText}</p>,]})
+    this.setState({displayText: [...this.state.displayText, <p>{this.context.story.choices.desc}</p>]})
   }
 
   render() {
@@ -100,6 +101,7 @@ export default class Dashboard extends React.Component {
           <div>
 
           </div>
+
           {/* <CharStatCard
 
             stats={this.props.character['stats']}
@@ -112,6 +114,8 @@ export default class Dashboard extends React.Component {
               ap: this.context.story['ap'],
               apMax: 10
             }} /> */}
+
+
           {/* <div className='trans-container'>
             <Transition
               reset
