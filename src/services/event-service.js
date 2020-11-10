@@ -10,20 +10,12 @@ const EventService={
       }
     })
       .then(res => {
-        if (!res.ok) {
+        if(!res.ok) {
           return res.json().then(e => Promise.reject(e))
         }
-          return res.json();
+        return res.json();
       })
   },
-<<<<<<< HEAD
-  postEvent(ev) {
-    let p1=new Promise((resolve, reject) => {
-      const duration=Math.floor(Math.random()*5000);
-      setTimeout(() => {
-        resolve(`${ev} sent!`)
-      }, duration)
-=======
   makeChoice(choice) {
     return fetch(`${config.API_ENDPOINT}/choice`, {
       method: 'POST',
@@ -31,10 +23,9 @@ const EventService={
         Authorization: `bearer ${TokenService.getAuthToken()}`,
         'content-type': 'application/json'
       },
-      body: JSON.stringify({choice:choice})
->>>>>>> 9b4dc72520b71ec86a4797a81d7b04f0a6e21210
+      body: JSON.stringify({choice: choice})
     })
-    return p1;
+    // return p1;
     // return fetch(`${config.API_ENDPOINT}/choice`, {
     //   method: 'POST',
     //   headers: {
