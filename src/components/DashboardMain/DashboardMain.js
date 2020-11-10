@@ -45,18 +45,18 @@ export default class Dashboard extends React.Component {
     this.setState({displayText: [...this.state.displayText, <p>{this.context.story.displayText}</p>]})
   }
 
-  render(){
+  render() {
     return (
       <main className='dash-main'>
-        <SimplifiedViewPort displayText={this.context.story.displayText}/>
-        <form id='choice_form' onSubmit={async(e)=>{
+        <SimplifiedViewPort displayText={this.context.story.displayText} />
+        <form id='choice_form' onSubmit={async (e) => {
           e.preventDefault();
-          const input = e.target.choice;
-          const inputText = input.value;
-          input.value = '';
+          const input=e.target.choice;
+          const inputText=input.value;
+          input.value='';
           this.context.setStory(await eventService.makeChoice(inputText));
         }}>
-          <input name='choice' type='text'/>
+          <input name='choice' type='text' />
           <button type='submit'>Make Choice</button>
         </form>
 
