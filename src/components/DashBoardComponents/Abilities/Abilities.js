@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-constructor */
 /* eslint-disable array-callback-return */
 /* eslint-disable no-unused-vars */
 import React from 'react';

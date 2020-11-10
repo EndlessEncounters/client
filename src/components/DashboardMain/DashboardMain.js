@@ -27,32 +27,6 @@ export default class Dashboard extends React.Component {
   }
   static contextType=EventContext;
 
-<<<<<<< HEAD:src/components/DashBoardComponents/DashboardMain/DashboardMain.js
-  tabs={
-    abilities: style => (<animated.div style={{...style}}><Abilities abilities={this.props.character.abilities} /></animated.div>),
-  }
-
-  handleExploreOption=(e) => {
-    e.preventDefault();
-    //Should send 'choice' to backend here and receive story
-    const value=e.target.value;
-    this.context.sendChoice(value)
-      .then(res => {
-        if(value!==this.state.view) {
-          this.setState({
-            view: value,
-            displayText: [<p>{this.context.story.displayText}</p>],
-            combat: this.context.story.combat
-          });
-        } else {
-          this.setState({
-            displayText: [...this.state.displayText, <p>{this.context.story.displayText}</p>],
-            combat: this.context.story.combat
-          });
-        }
-      })
-  }
-=======
   // handleExploreOption=(e) => {
   //   e.preventDefault();
   //   //Should send 'choice' to backend here and receive story
@@ -72,7 +46,6 @@ export default class Dashboard extends React.Component {
   //     })
   //   }
   // }
->>>>>>> 9b4dc72520b71ec86a4797a81d7b04f0a6e21210:src/components/DashboardMain/DashboardMain.js
 
   handleDisplayChange=(ev) => {
     ev.preventDefault();
@@ -96,23 +69,23 @@ export default class Dashboard extends React.Component {
     return tabs.map((tab, index) => <SwitchTabSound props={tab} key={index} />)
   }
 
-  componentDidMount=async() => {
+  componentDidMount=async () => {
     this.context.setStory(await eventService.getUserStory())
     this.setState({displayText: [...this.state.displayText, <p>{this.context.story.displayText}</p>]})
   }
 
-  render(){
+  render() {
     return (
       <main className='dash-main'>
-        <SimplifiedViewPort displayText={this.context.story.displayText}/>
-        <form id='choice_form' onSubmit={async(e)=>{
+        <SimplifiedViewPort displayText={this.context.story.displayText} />
+        <form id='choice_form' onSubmit={async (e) => {
           e.preventDefault();
-          const input = e.target.choice;
-          const inputText = input.value;
-          input.value = '';
+          const input=e.target.choice;
+          const inputText=input.value;
+          input.value='';
           this.context.setStory(await eventService.makeChoice(inputText));
         }}>
-          <input name='choice' type='text'/>
+          <input name='choice' type='text' />
           <button type='submit'>Make Choice</button>
         </form>
 
@@ -136,7 +109,7 @@ export default class Dashboard extends React.Component {
               ap: this.context.story['ap'],
               apMax: 10
             }} /> */}
-            {/* <div className='trans-container'>
+          {/* <div className='trans-container'>
             <Transition
               reset
               unique
@@ -148,7 +121,7 @@ export default class Dashboard extends React.Component {
               {display => this.tabs[display]}
             </Transition>
           </div> */}
-          
+
         </div>
 
       </main>
