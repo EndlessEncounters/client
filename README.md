@@ -43,4 +43,4 @@ Endless Encounters is a text-based RPG ("Role Playing Game") developed by Emotio
 ## Technologies Used:  
 FrontEnd: JavaScript, React, CSS 3, HTML 5, and Jest.  
 
-BackEnd: Node.js, Express.js, PostgreSQL, and Mocha & Chai, ReactSpring, FireBase.
+BackEnd: Node.js, Express.js, PostgreSQL, Mocha & Chai, ReactSpring, and FireBase.
