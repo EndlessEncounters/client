@@ -56,8 +56,8 @@ export default class Dashboard extends React.Component {
           input.value='';
           this.context.setStory(await eventService.makeChoice(inputText));
         }}>
-          <input name='choice' type='text' />
-          <button type='submit'>Make Choice</button>
+          <input aria-label='input form rpg' name='choice' type='text' />
+          <button aria-label='submit button for input form' type='submit'>Make Choice</button>
         </form>
 
         <div className='char-assets'>
