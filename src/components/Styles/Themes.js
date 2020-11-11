@@ -1,13 +1,15 @@
-export const lightTheme = {
+export const lightTheme={
   body: 'snow',
   text: 'black',
+  link: '#97FFff',
   startLink: '#275D5D',
   headerText: '#275D5D',
   toggleBorder: '#000',
   background: 'timber',
 }
-export const darkTheme = {
+export const darkTheme={
   body: '#111013',
+  link: '#97FFff',
   text: '#FFF',
   startLink: '#97FFff',
   headerText: '#97FFff',

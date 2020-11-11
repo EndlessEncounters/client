@@ -17,7 +17,7 @@ export const GlobalStyles=createGlobalStyle`
     transition: all 0.50s linear;
   }
   .link {
-       color: ${({theme}) => theme.startLink};
+     color: ${({theme}) => theme.startLink};
     transition: all 0.50s linear;
   }
   .main-link:visited {
