@@ -70,7 +70,7 @@ export default class Login extends React.Component {
           </div>
           <button className="googlebutton" onClick={this.handleGoogleSignIn} aria-label="Login with Google button">Login With Google</button>
         </form>
-       
+
       </main>
     )
   }

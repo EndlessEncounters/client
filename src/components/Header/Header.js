@@ -7,7 +7,7 @@ import SoundPlayCheck from '../SoundWidgets/SoundPlayCheck';
 
 export default class Header extends Component {
   static contextType=UserContext;
-  static defaultProps = {
+  static defaultProps={
     themeToggler: {}
   }
   renderLogout=() => {
@@ -32,15 +32,15 @@ export default class Header extends Component {
   render() {
     return (
       <nav className='border' id='headerNav'>
-        <div >{ TokenService.hasAuthToken()
+        <div >{TokenService.hasAuthToken()
           ? this.context.user.username
-          : null }
+          :null}
         </div>
         <div id='themeToggle'>
           {this.props.toggler}
         </div>
-        
-        <div id='soundToggle'>  
+
+        <div id='soundToggle'>
           <SoundPlayCheck />
         </div>
 
@@ -56,11 +56,11 @@ export default class Header extends Component {
         <div >
           <Link className='headerLink' to='/about' aria-label="About page link">About</Link>
         </div>
-        
+
         {TokenService.hasAuthToken()
           ? this.renderLogout()
           :this.renderLogin()}
-        
+
       </nav>
     )
   }

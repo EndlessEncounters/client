@@ -1,14 +1,14 @@
 import React from 'react';
 import Accordion from '../../components/AccordionBtn/AccordionBtn';
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import mntn from '../../assets/images/mountains.png';
 import './About.css'
 
 export default function About() {
 
-  const specials = ` ! ' # $ % & ' ( ) * + , - . / : ; < = > ? @ [  ] ^ _ { | } ~ `
-  const upperNum = `If you can do this PLEASE send us an email because we haven't seen one yet!`
-  let aboutData = [
+  const specials=` ! ' # $ % & ' ( ) * + , - . / : ; < = > ? @ [  ] ^ _ { | } ~ `
+  const upperNum=`If you can do this PLEASE send us an email because we haven't seen one yet!`
+  let aboutData=[
     {
       header: (
         <h3 className='question'>
@@ -95,9 +95,9 @@ export default function About() {
       content: (
         <div>
           <span>Combat is turn-based; on your turn, you may click on one of your character's abilities or spells' to perform against your target.
-             Your character will then attempt the action, with the chance to miss, hit, or completely obliterate their enemy. 
-             Each hit to your opponent will result in damage to their health. Abilities and spells have cost, so make sure you have enough 
-             (health, mana, and ability) to perform this action. Keep a heads up for
+          Your character will then attempt the action, with the chance to miss, hit, or completely obliterate their enemy.
+          Each hit to your opponent will result in damage to their health. Abilities and spells have cost, so make sure you have enough
+          (health, mana, and ability) to perform this action. Keep a heads up for
             critical misses or hits.</span>
         </div>
       )
@@ -105,8 +105,8 @@ export default function About() {
   ]
 
   function aboutLoop() {
-    let html = [];
-    for (const index in aboutData) {
+    let html=[];
+    for(const index in aboutData) {
       html.push(
         <Accordion
           key={index}
@@ -119,7 +119,7 @@ export default function About() {
   }
 
   return (
-    <main className = 'abt-outer'>
+    <main className='abt-outer'>
       <h1 className='header'>Endless Encounters</h1>
       <div className='abt-inner'>
         <h2 className='sub-head'>A place for those seeking a way to leave their world behind...</h2>

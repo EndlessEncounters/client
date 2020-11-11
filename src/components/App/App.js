@@ -29,31 +29,31 @@ function App() {
   })
   const themeMode=theme==='light'? lightTheme:darkTheme;
 
-    return (
+  return (
     <ThemeProvider theme={themeMode}>
       <GlobalStyles />
-        <Header toggler={<Toggler theme={theme} toggleTheme={themeToggler} />} />
-        <Switch>
-          <PublicRoute
-            path='/register'
-            component={Register} />
-          <PublicRoute
-            path='/login'
-            component={LoginForm} />
-          <Route
-            exact path='/about'
-            component={About} />
-          <PrivateRoute
-            path='/main'
-            component={DashboardMain} />
-          <Route
-            exact
-            path='/'
-            component={HomeMain} />
-        </Switch>
-      
+      <Header toggler={<Toggler theme={theme} toggleTheme={themeToggler} />} />
+      <Switch>
+        <PublicRoute
+          path='/register'
+          component={Register} />
+        <PublicRoute
+          path='/login'
+          component={LoginForm} />
+        <Route
+          exact path='/about'
+          component={About} />
+        <PrivateRoute
+          path='/main'
+          component={DashboardMain} />
+        <Route
+          exact
+          path='/'
+          component={HomeMain} />
+      </Switch>
+
     </ThemeProvider>)
-  
+
 }
 
 export default App;

@@ -6,11 +6,11 @@ import TokenService from '../services/token-service';
 const UserContext=React.createContext({
   user: {},
   error: null,
-  setError: () => {},
-  clearError: () => {},
-  setUser: () => {},
-  processLogin: () => {},
-  processLogout: () => {}
+  setError: () => { },
+  clearError: () => { },
+  setUser: () => { },
+  processLogin: () => { },
+  processLogout: () => { }
 });
 
 export default UserContext

@@ -3,7 +3,7 @@ import ReactDom from 'react-dom';
 import AccordionBtn from '../components/AccordionBtn/AccordionBtn';
 
 it('renders AccordionBtn without crashing', () => {
-  const div = document.createElement('div');
+  const div=document.createElement('div');
 
   ReactDom.render(<AccordionBtn />, div);
 
