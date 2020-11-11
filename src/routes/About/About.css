@@ -1,0 +1,38 @@
+
+.abt-outer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    margin: auto;
+}
+
+.abt-inner{
+    margin-top: -50px;
+}
+
+.abt-sect{
+    width: auto;
+    margin-bottom: 25px;
+}
+
+.title{
+    text-align: center;
+    font-size: 3.5em;
+    font-family: 'nerdland';
+    margin-top: 75px;
+}
+
+.sub-title{
+    font-family: 'Nelship';
+    font-size: 1.2em;
+    margin: 0 15px;
+    margin-bottom: 10px
+}
+
+.question{
+    font-family: 'handy';
+    font-size: 1.4em;
+}
+

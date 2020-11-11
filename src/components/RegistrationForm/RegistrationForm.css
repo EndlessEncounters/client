@@ -1,0 +1,76 @@
+input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+  }
+
+  .mainBody{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .form{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    min-width: 300px;
+    border-radius: 3px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .row{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: .5em;
+  }
+  .row > input{
+  padding: .5em;
+  }
+
+  .row > label {
+    padding-bottom: 10px;
+  }
+
+  .form  button {
+    display: block;
+    width: 50%;
+    margin: 15px auto;
+    padding: 10px;
+    font-weight: 700;
+    background-color: #48A9A6;
+    border-radius: 8px;
+    cursor: grab;
+  }
+
+  .accountRte{
+      text-align: center;
+      margin-top: 2rem;
+      color: #000;
+  }
+
+  .accountRte:visited{
+    color: #000;
+  }
+
+  .accountRte:hover{
+    color: #48A9a6;
+  }
+
+  .form button:hover {
+    background-color: #FEC369;
+    box-shadow: 0 0 10px 2px #595358;
+  }
+
+  @media all and (min-width: 600px){
+    .form{
+      display: flex;
+      flex-direction: column;
+      margin-top: 2rem;
+      min-width: 600px;
+    }
+  }
