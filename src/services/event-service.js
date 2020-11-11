@@ -3,8 +3,8 @@ import config from '../config';
 import TokenService from './token-service';
 
 const EventService={
-  async getUserStory() {
-    return fetch(`${config.API_ENDPOINT}/user/story/`, {
+  async getUserStory(id) {
+    return fetch(`${config.API_ENDPOINT}/story/${id}`, {
       headers: {
         'authorization': `bearer ${TokenService.getAuthToken()}`
       }

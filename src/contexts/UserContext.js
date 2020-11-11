@@ -43,6 +43,7 @@ export class UserProvider extends Component {
 
   setUser=user => {
     this.setState({user});
+    window.localStorage.setItem('userInfo', user.id);
   }
 
   processLogin=authToken => {

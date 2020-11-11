@@ -27,7 +27,6 @@ export default class Dashboard extends React.Component {
     ev.preventDefault();
     this.setState({display: ev.target.value});
   }
-
   renderExploreOptions() {
     if(this.context.story.choices) {
       return this.context.story.choices.map((choice, index) => {
@@ -38,15 +37,8 @@ export default class Dashboard extends React.Component {
     }
   }
 
-  renderTabButtons() {
-    const tabs=[
-      {name: 'Abilities', tabName: 'abilities', func: this.handleDisplayChange}
-    ]
-    return tabs.map((tab, index) => <SwitchTabSound props={tab} key={index} />)
-  }
-
   componentDidMount=async () => {
-    this.context.setStory(await eventService.getUserStory())
+    this.context.setStory(await eventService.getUserStory(window.localStorage.getItem('userInfo')))
     this.setState({displayText: [...this.state.displayText, <p>{this.context.story.displayText}</p>]})
   }
 
