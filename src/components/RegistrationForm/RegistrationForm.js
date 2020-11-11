@@ -27,10 +27,17 @@ export default class Registration extends React.Component {
       password: userpass.value
     })
       .then(newUser => {
-        useremail.value='';
-        username.value='';
-        userpass.value='';
-        console.log('User created')
+        AuthApiService.postLogin({
+          username: newUser.username,
+          password: userpass.value
+
+        })
+          .then(res => {
+            useremail.value='';
+            username.value='';
+            userpass.value='';
+            this.context.processLogin(res.authToken);
+          })
       })
       .catch(res => {
         this.setState({error: res.error});
@@ -38,7 +45,7 @@ export default class Registration extends React.Component {
   }
   handleGoogleReg=(e) => {
     e.preventDefault()
-    const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+    const googleAuthProvider=new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(googleAuthProvider).then(res =>
       AuthApiService.postUser({
         email: res.additionalUserInfo.profile.email,
@@ -82,7 +89,7 @@ export default class Registration extends React.Component {
 
           </div>
           <button className="googlebutton" onClick={this.handleGoogleReg} aria-label="Register with Google button">Register With Google</button>
-          <Link className="accountRte" to='/login'>Already have an account?</Link>
+          <Link className="accountRte link" to='/login'>Already have an account?</Link>
         </form>
       </main>
 

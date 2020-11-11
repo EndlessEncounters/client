@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
-export const GlobalStyles = createGlobalStyle `
+import {createGlobalStyle} from 'styled-components';
+export const GlobalStyles=createGlobalStyle`
   body {
     background: ${({theme}) => theme.body};
     color: ${({theme}) => theme.text};
@@ -16,8 +16,8 @@ export const GlobalStyles = createGlobalStyle `
     color: ${({theme}) => theme.text};
     transition: all 0.50s linear;
   }
-  .main-link {
-    color: ${({theme}) => theme.startLink}
+  .link {
+       color: ${({theme}) => theme.startLink};
     transition: all 0.50s linear;
   }
   .main-link:visited {
