@@ -4,11 +4,11 @@ import TokenService from '../services/token-service';
 const UserContext=React.createContext({
   user: {},
   error: null,
-  setError: () => {},
-  clearError: () => {},
-  setUser: () => {},
-  processLogin: () => {},
-  processLogout: () => {}
+  setError: () => { },
+  clearError: () => { },
+  setUser: () => { },
+  processLogin: () => { },
+  processLogout: () => { }
 });
 
 export default UserContext
@@ -41,6 +41,7 @@ export class UserProvider extends Component {
 
   setUser=user => {
     this.setState({user});
+    window.localStorage.setItem('userInfo', user.id);
   }
 
   processLogin=authToken => {

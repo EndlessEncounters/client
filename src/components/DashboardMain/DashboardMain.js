@@ -40,8 +40,8 @@ export default class Dashboard extends React.Component {
     }
   }
 
-  componentDidMount=async() => {
-    this.context.setStory(await eventService.getUserStory())
+  componentDidMount=async () => {
+    this.context.setStory(await eventService.getUserStory(window.localStorage.getItem('userInfo')))
     this.setState({displayText: [...this.state.displayText, <p>{this.context.story.displayText}</p>]})
   }
 
