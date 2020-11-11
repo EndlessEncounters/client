@@ -1,15 +1,15 @@
 import React from 'react';
-import DashboardMain from '../../components/DashBoardComponents/DashboardMain/DashboardMain';
-import CharacterContext from '../../contexts/CharacterContext';
+import DashboardMain from '../../components/DashboardMain/DashboardMain';
+import EventContext from '../../contexts/EventContext';
 import CharacterService from '../../services/character-service';
-import character from '../../charDummy'
+//import character from '../../charDummy'
 
 export default class Dashboard extends React.Component {
-  static contextType=CharacterContext;
+  static contextType=EventContext;
 
   handleCreate=(e) => {
     //Should send selected character as choice
-    this.context.setCharacter(character)
+    //this.context.setPlayer(character)
   }
 
   componentDidMount=() => {
@@ -17,16 +17,17 @@ export default class Dashboard extends React.Component {
       .then(res => {
         CharacterService.getEntity(res[0].entity)
           .then(res => {
-            this.context.setCharacter(res)
+            this.context.setPlayer(res)
           })
       })
   }
 
   //Either place "this.character.context" for server data or 'character' for dummyData
   render() {
+    console.log(this.context.player);
     return (
       <>
-        {!this.context.character.name&&
+        {/* {!this.context.character.name&&
           <div>
             <h2>Choose a class:</h2>
             <form onSubmit={(e) => this.handleCreate(e)} style={{margin: '0 100px'}}>
@@ -40,8 +41,8 @@ export default class Dashboard extends React.Component {
                 Create New Character
               </button>
             </form>
-          </div>}
-        {this.context.character.name&&<DashboardMain character={this.context.character} />}
+          </div>} */}
+        {<DashboardMain character={this.context.player} />}
       </>
     )
   }
