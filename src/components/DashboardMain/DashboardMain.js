@@ -1,10 +1,8 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import SimplifiedViewPort from '../Viewport/SimplifiedViewport.js';
 import eventService from '../../services/event-service';
 import EventContext from '../../contexts/EventContext';
-
-import './Dash.css';
+import SwitchTabSound from '../SoundWidgets/SwitchTabSound';
 
 //Using display state
 
@@ -40,37 +38,33 @@ export default class Dashboard extends React.Component {
     }
   }
 
-  componentDidMount=async () => {
-    this.context.setStory(await eventService.getUserStory(window.localStorage.getItem('userInfo')))
+  renderTabButtons() {
+    const tabs=[
+      {name: 'Abilities', tabName: 'abilities', func: this.handleDisplayChange}
+    ]
+    return tabs.map((tab, index) => <SwitchTabSound props={tab} key={index} />)
+  }
+
+  componentDidMount=async() => {
+    this.context.setStory(await eventService.getUserStory())
     this.setState({displayText: [...this.state.displayText, <p>{this.context.story.displayText}</p>]})
   }
 
-  render() {
+  render(){
     return (
       <main className='dash-main'>
-        <SimplifiedViewPort displayText={this.context.story.displayText} />
-        <form id='choice_form' onSubmit={async (e) => {
+        
+        <SimplifiedViewPort displayText={this.context.story.displayText}/>
+        <form id='choice_form' onSubmit={async(e)=>{
           e.preventDefault();
-          const input=e.target.choice;
-          const inputText=input.value;
-          input.value='';
-          const newData = await eventService.makeChoice(inputText)
-          .then(res => {
-            return res.json();
-          })
-          .then(resJ => {
-            this.context.setStory(resJ);
-          })
+          const input = e.target.choice;
+          const inputText = input.value;
+          input.value = '';
+          this.context.setStory(await eventService.makeChoice(inputText));
         }}>
-          <input aria-label='input form rpg' name='choice' type='text' />
-          <button aria-label='submit button for input form' type='submit'>Make Choice</button>
+          <input name='choice' type='text' aria-label="input choice textbox"/>
+          <button type='submit' aria-label="submit choice button">Make Choice</button>
         </form>
-
-        <div className='char-assets'>
-          <div>
-
-          </div>
-        </div>
 
       </main>
     )

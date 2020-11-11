@@ -26,7 +26,10 @@ export default class SimplifiedViewport extends React.Component {
     render() {
         return (
           <div className='viewport border'>
+            <span className='viewportText'>
             {this.processDisplayText(this.context.story.displayText)}
+            </span>
+
           </div>
         )
       }

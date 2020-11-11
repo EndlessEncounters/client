@@ -1,17 +1,13 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
-import EventService from '../services/event-service';
-
 
 const EventContext=React.createContext({
   story: {},
   entity: {},
   error: null,
-  setError: () => { },
-  clearError: () => { },
-  setStory: () => { },
-  setEntity: () => { },
-  sendChoice: () => { }
+  setError: () => {},
+  clearError: () => {},
+  setStory: () => {},
+  setEntity: () => {}
 });
 
 export default EventContext;
@@ -43,16 +39,7 @@ export class EventProvider extends React.Component {
   setEntity=(entity) => {
     this.setState({entity});
   }
-
-  sendChoice=(choice) => {
-    EventService.postEvent(choice)
-      .then(res => {
-        //insert "res" in place of "storyDummy" after server connected
-        this.setStory(res);
-        return res;
-      });
-  }
-
+  
   render() {
     const value={
       story: this.state.story,
@@ -61,7 +48,6 @@ export class EventProvider extends React.Component {
       setStory: this.setStory,
       clearError: this.clearError,
       setEvent: this.setEvent,
-      sendChoice: this.sendChoice
     }
     return (
       <EventContext.Provider value={value}>

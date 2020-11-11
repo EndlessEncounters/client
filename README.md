@@ -1,14 +1,15 @@
-# Endless Encounters Client  
-[Endless Encounters](https://endless-encounters-chi.vercel.app/ "Endless Encounters") ||
+# Endless Encounters API  
+[Endless Encounters](https://endless-encounters.vercel.app/ "Endless Encounters") ||
 [Client GitHub](https://github.com/EndlessEncounters/client "Client GitHub") ||
-[API GitHub](https://github.com/EndlessEncounters/server "API Github")  
-By: [Alexis Felts](https://github.com/Nvlt "Alexis Felts"),
-[John Pendergast](https://github.com/Jpending "John Pendergast"),
-[Scott Whiteman](https://github.com/scottWhiteman "Scott Whiteman"), &
+[API GitHub](https://github.com/Nvlt/endless_encounters_server) "API Github")  
+By: [Alexis Felts](https://github.com/Nvlt "Alexis Felts"), 
+[John Pendergast](https://github.com/Jpending "John Pendergast"), 
+[Scott Whiteman](https://github.com/scottWhiteman "Scott Whiteman"), & 
 [Tiffany Summerford](https://github.com/breakfastatiffs "Tiffany Summerford")  
 
 ## About Endless Encounters:  
-Endless Encounters is a text-based RPG ("Role Playing Game") developed by Emotionally Exhausted. Once you're in, you can explore a whole new world in search of ravenous enemies to duel swords with or visit the tavern to discuss rumors. Endless Encounters includes randomly generated events and actions/abilities to respond with.  
+Endless Encounters is a text-based RPG ("Role-Playing Game") developed by EE. Once you're in, you can explore a whole new world in search of ravenous enemies to duel swords with or visit the tavern to discuss rumors. Endless Encounters includes randomly generated events and actions/abilities to respond with.  
+
 
 ## How To Use:
 
@@ -26,7 +27,7 @@ Endless Encounters is a text-based RPG ("Role Playing Game") developed by Emotio
   Password: password8!
   Email: Jane@gmail.com
  ```
- ![register](/screenshots/reg.JPG)
+ ![register](/screenshots/register.JPG)
 
 #### Log In
   A Demo Account has been set up for ease of access.

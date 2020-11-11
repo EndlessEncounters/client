@@ -50,6 +50,15 @@ input[type=text], input[type=password], input[type=email] {
   .accountRte{
       text-align: center;
       margin-top: 2rem;
+      color: #000;
+  }
+
+  .accountRte:visited{
+    color: #000;
+  }
+
+  .accountRte:hover{
+    color: #48A9a6;
   }
 
   .form button:hover {

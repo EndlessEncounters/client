@@ -29,17 +29,11 @@ function App() {
   })
   const themeMode=theme==='light'? lightTheme:darkTheme;
 
-  return trans.map(({item: location, props, key}) => (
+    return (
     <ThemeProvider theme={themeMode}>
       <GlobalStyles />
-
-      <animated.div key={key} style={props}>
-        <header>
-          <Header toggler={<Toggler theme={theme} toggleTheme={themeToggler} />} />
-        </header>
-
-        <Switch location={location}>
-
+        <Header toggler={<Toggler theme={theme} toggleTheme={themeToggler} />} />
+        <Switch>
           <PublicRoute
             path='/register'
             component={Register} />
@@ -57,9 +51,9 @@ function App() {
             path='/'
             component={HomeMain} />
         </Switch>
-      </animated.div>
-    </ThemeProvider>
-  ))
+      
+    </ThemeProvider>)
+  
 }
 
 export default App;

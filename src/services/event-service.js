@@ -3,17 +3,17 @@ import config from '../config';
 import TokenService from './token-service';
 
 const EventService={
-  async getUserStory(id) {
-    return fetch(`${config.API_ENDPOINT}/story/${id}`, {
+  async getUserStory() {
+    return fetch(`${config.API_ENDPOINT}/user/story/`, {
       headers: {
         'authorization': `bearer ${TokenService.getAuthToken()}`
       }
     })
       .then(res => {
-        if(!res.ok) {
+        if (!res.ok) {
           return res.json().then(e => Promise.reject(e))
         }
-        return res.json();
+          return res.json();
       })
   },
   makeChoice(choice) {
@@ -23,22 +23,13 @@ const EventService={
         Authorization: `bearer ${TokenService.getAuthToken()}`,
         'content-type': 'application/json'
       },
-      body: JSON.stringify({choice: choice})
+      body: JSON.stringify({choice:choice})
     })
-    // return p1;
-    // return fetch(`${config.API_ENDPOINT}/choice`, {
-    //   method: 'POST',
-    //   headers: {
-    //     Authorization: `bearer ${TokenService.getAuthToken()}`,
-    //     'content-type': 'application/json'
-    //   },
-    //   body: JSON.stringify(ev)
-    // })
-    //   .then(res => {
-    //     return (!res.ok)
-    //       ? res.json().then(e => Promise.reject(e))
-    //       :res.json();
-    //   });
+      .then(res => {
+        return (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          :res.json();
+      });
   }
 
 }
