@@ -1,28 +1,43 @@
-main{
+main
+{
     position: fixed;
     bottom: 65px;
     top:40px;
     right:0px;
     left:0px;
-    overflow-y: scroll;
+    overflow-y: auto;
+    
 }
 
 .intro{
-    text-align: center;
     margin: auto;
-    padding: 5px;
+    padding: 20px;
 }
 
-.title{
+.intro p{
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5em;
+}
+
+.intro h4
+{
+    text-align: center;
+}
+
+.header{
     text-align: center;
     font-size: 3.5em;
     font-family: 'nerdland';
+    margin-top: 10px;
 }
 
-.sub-title{
+.sub-head{
     font-family: 'Nelship';
     text-align: center;
-    padding-top: 35px;
+    margin: 10px auto;
+    padding: 20px;
 }
 
 .main-inner{
@@ -44,16 +59,33 @@ main{
     text-decoration: none;
 }
 
-.main-link:visited {
-    color: #48A9A6;
-}
-
-.main-link:hover {
+.main-link:hover{
     color: #FEC369;
 }
 
 @media only screen and (min-width: 600px) {
-    .intro{
-        min-width: 500px;
+   
+    .intro
+    {
+        width: 600px;
+        margin: auto;
+        padding: 20px;
     }
+    .intro p
+    {
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        width: 500px;
+    }
+    .intro h4
+    {
+        text-align: center;
+    }
+    .header {
+      margin-top: 100px;
+      font-size: 2.8em;
+    }
+    
+    
 }

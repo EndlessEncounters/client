@@ -25,7 +25,11 @@ const EventService={
       },
       body: JSON.stringify({choice: choice})
     })
-
+      .then(res => {
+        return (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          :res.json();
+      });
   }
 
 }

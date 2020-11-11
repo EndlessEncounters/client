@@ -1,19 +1,19 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom'
+import {Route, Redirect} from 'react-router-dom'
 import UserContext from '../../../contexts/UserContext';
 
 export default function PublicRoute({component, ...props}) {
-  const Component = component;
+  const Component=component;
 
   return (
     <Route
       {...props}
       render={componentProps => (
         <UserContext.Consumer>
-          {userContext => 
+          {userContext =>
             !!userContext.user.id
               ? <Redirect to={'/'} />
-              : <Component {...componentProps}/>
+              :<Component {...componentProps} />
           }
         </UserContext.Consumer>
       )}

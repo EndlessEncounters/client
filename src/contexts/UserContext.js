@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+// eslint-disable-next-line no-unused-vars
+import AuthApiService from '../services/auth-api-service';
 import TokenService from '../services/token-service';
 
 const UserContext=React.createContext({

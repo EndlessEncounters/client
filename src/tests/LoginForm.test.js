@@ -3,7 +3,7 @@ import ReactDom from 'react-dom';
 import LoginForm from '../components/LoginForm/LoginForm';
 
 it('renders LoginForm without crashing', () => {
-  const div = document.createElement('div');
+  const div=document.createElement('div');
 
   ReactDom.render(<LoginForm />, div);
 

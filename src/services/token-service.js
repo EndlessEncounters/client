@@ -1,7 +1,7 @@
 import jwtDecode from 'jwt-decode';
 import config from '../config';
 
-const TokenService = {
+const TokenService={
   saveAuthToken(token) {
     window.localStorage.setItem(config.TOKEN_KEY, token);
   },
@@ -24,8 +24,8 @@ const TokenService = {
     return jwtDecode(jwt);
   },
   parseAuthToken() {
-    const authToken = TokenService.getAuthToken();
-    if (authToken) {
+    const authToken=TokenService.getAuthToken();
+    if(authToken) {
       return TokenService.parseJwt(authToken)
     }
     else {

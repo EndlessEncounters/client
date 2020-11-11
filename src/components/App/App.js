@@ -29,37 +29,31 @@ function App() {
   })
   const themeMode=theme==='light'? lightTheme:darkTheme;
 
-  return trans.map(({item: location, props, key}) => (
+  return (
     <ThemeProvider theme={themeMode}>
       <GlobalStyles />
+      <Header toggler={<Toggler theme={theme} toggleTheme={themeToggler} />} />
+      <Switch>
+        <PublicRoute
+          path='/register'
+          component={Register} />
+        <PublicRoute
+          path='/login'
+          component={LoginForm} />
+        <Route
+          exact path='/about'
+          component={About} />
+        <PrivateRoute
+          path='/main'
+          component={DashboardMain} />
+        <Route
+          exact
+          path='/'
+          component={HomeMain} />
+      </Switch>
 
-      <animated.div key={key} style={props}>
-        <header>
-          <Header toggler={<Toggler theme={theme} toggleTheme={themeToggler} />} />
-        </header>
+    </ThemeProvider>)
 
-        <Switch location={location}>
-
-          <PublicRoute
-            path='/register'
-            component={Register} />
-          <PublicRoute
-            path='/login'
-            component={LoginForm} />
-          <Route
-            exact path='/about'
-            component={About} />
-          <PrivateRoute
-            path='/main'
-            component={DashboardMain} />
-          <Route
-            exact
-            path='/'
-            component={HomeMain} />
-        </Switch>
-      </animated.div>
-    </ThemeProvider>
-  ))
 }
 
 export default App;

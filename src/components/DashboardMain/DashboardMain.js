@@ -1,10 +1,8 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import SimplifiedViewPort from '../Viewport/SimplifiedViewport.js';
 import eventService from '../../services/event-service';
 import EventContext from '../../contexts/EventContext';
-
-import './Dash.css';
+import SwitchTabSound from '../SoundWidgets/SwitchTabSound';
 
 //Using display state
 
@@ -29,7 +27,6 @@ export default class Dashboard extends React.Component {
     ev.preventDefault();
     this.setState({display: ev.target.value});
   }
-
   renderExploreOptions() {
     if(this.context.story.choices) {
       return this.context.story.choices.map((choice, index) => {
@@ -48,29 +45,18 @@ export default class Dashboard extends React.Component {
   render() {
     return (
       <main className='dash-main'>
+
         <SimplifiedViewPort displayText={this.context.story.displayText} />
         <form id='choice_form' onSubmit={async (e) => {
           e.preventDefault();
           const input=e.target.choice;
           const inputText=input.value;
           input.value='';
-          const newData = await eventService.makeChoice(inputText)
-          .then(res => {
-            return res.json();
-          })
-          .then(resJ => {
-            this.context.setStory(resJ);
-          })
+          this.context.setStory(await eventService.makeChoice(inputText));
         }}>
-          <input aria-label='input form rpg' name='choice' type='text' />
-          <button aria-label='submit button for input form' type='submit'>Make Choice</button>
+          <input name='choice' type='text' aria-label="input choice textbox" />
+          <button type='submit' aria-label="submit choice button">Make Choice</button>
         </form>
-
-        <div className='char-assets'>
-          <div>
-
-          </div>
-        </div>
 
       </main>
     )
