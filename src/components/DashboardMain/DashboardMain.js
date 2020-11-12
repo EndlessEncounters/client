@@ -2,7 +2,7 @@ import React from 'react';
 import SimplifiedViewPort from '../Viewport/SimplifiedViewport.js';
 import eventService from '../../services/event-service';
 import EventContext from '../../contexts/EventContext';
-import SwitchTabSound from '../SoundWidgets/SwitchTabSound';
+
 
 //Using display state
 

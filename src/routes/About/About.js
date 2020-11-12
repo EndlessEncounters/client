@@ -1,13 +1,13 @@
 import React from 'react';
 import Accordion from '../../components/AccordionBtn/AccordionBtn';
-import {Link} from 'react-router-dom'
+//import {Link} from 'react-router-dom'
 import mntn from '../../assets/images/mountains.png';
 import './About.css'
 
 export default function About() {
 
-  const specials=` ! ' # $ % & ' ( ) * + , - . / : ; < = > ? @ [  ] ^ _ { | } ~ `
-  const upperNum=`If you can do this PLEASE send us an email because we haven't seen one yet!`
+  //const specials=` ! ' # $ % & ' ( ) * + , - . / : ; < = > ? @ [  ] ^ _ { | } ~ `
+  //const upperNum=`If you can do this PLEASE send us an email because we haven't seen one yet!`
   let aboutData=[
     {
       header: (
